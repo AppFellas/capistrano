@@ -11,8 +11,7 @@ require 'capistrano/scm'
   # @author Hartog de Mik
   #
   
-  class Capistrano::None < Capistrano::SCM
-  
+class Capistrano::None < Capistrano::SCM  
       # execute hg in context with arguments
       def svn(*args)
         args.unshift(:svn)
@@ -39,4 +38,5 @@ require 'capistrano/scm'
         def release
           #svn :export, '.', release_path
         end
-  end
+      end  
+end
