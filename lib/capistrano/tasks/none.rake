@@ -24,7 +24,7 @@ namespace :none do
   end
 
   desc 'Pull changes from the remote repo'
-  task :update => :'hg:clone' do
+  task :update => :'none:clone' do
     on release_roles :all do
       within repo_path do
         strategy.update
@@ -33,7 +33,7 @@ namespace :none do
   end
 
   desc 'Copy repo to releases'
-  task :create_release => :'hg:update' do
+  task :create_release => :'none:update' do
     on release_roles :all do
       within repo_path do
         strategy.release
