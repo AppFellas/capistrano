@@ -17,6 +17,7 @@ namespace :none do
         info t(:mirror_exists, at: repo_path)
       else
         within deploy_path do
+          execute :mkdir, "-p", repo_path
           strategy.clone
         end
       end
