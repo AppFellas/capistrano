@@ -11,7 +11,7 @@ class Capistrano::None < Capistrano::SCM
   
       module DefaultStrategy
         def test
-          true
+          test! " [ -f #{repo_path} ] "
         end
     
         def check

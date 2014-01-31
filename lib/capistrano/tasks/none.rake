@@ -13,11 +13,12 @@ namespace :none do
   desc 'Clone the repo to the cache'
   task :clone do
     on release_roles :all do
+      
       if strategy.test
         info t(:mirror_exists, at: repo_path)
       else
-        execute :mkdir, "-p", repo_path
         within deploy_path do
+          execute :mkdir, "-p", repo_path
           strategy.clone
         end
       end
