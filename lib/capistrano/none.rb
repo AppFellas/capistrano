@@ -1,4 +1,4 @@
-load File.expand_path("../tasks/svn.rake", __FILE__)
+load File.expand_path("../tasks/none.rake", __FILE__)
 
 require 'capistrano/scm'
   
