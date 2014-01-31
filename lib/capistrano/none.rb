@@ -1,18 +1,9 @@
 load File.expand_path("../tasks/svn.rake", __FILE__)
 
 require 'capistrano/scm'
-
-  # Base class for SCM strategy providers.
-  #
-  # @abstract
-  #
-  # @attr_reader [Rake] context
-  #
-  # @author Hartog de Mik
-  #
   
 class Capistrano::None < Capistrano::SCM  
-      # execute hg in context with arguments
+  
       def svn(*args)
         args.unshift(:svn)
         context.execute *args
